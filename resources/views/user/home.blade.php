@@ -1,22 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container margin padding ">
+    <div class="container">
+    <div class="col-md-6 col-md-offset-3">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-primary">
+        <form method="post" action="{{route('user.post',Auth::user()->id)}}">
+        <div class="form-group">
+            <label for="comment">Write something new</label>
+            <textarea class="form-control"  rows="3" id="comment"></textarea>
+        </div> 
+        <div class="form-group">
+            <button type="button" class="btn btn-primary pull-right">Primary</button>
+        </div>
+    </div>
+    </div>
+    </div>
+    <br>
+<div class="col-md-12">
+    <div class="col-md-3">
+        <div class="panel panel-primary">
                 <div class="panel-heading">User Dashboard</div>
 
                 <div class="panel-body">
                     You are logged in!
                 </div>
-            </div>
-        </div>
+            </div>     
+   
     </div>
+    
 
-    @foreach($posts as $post)
-    <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-6">
+       @foreach($posts as $post)
+    <!-- <div class="row"> -->
         <div class="panel panel-default">
             <div class="panel-heading">{{$post->title}}</div>
 
@@ -24,8 +40,15 @@
                 {{$post->body}}
             </div>
         </div>
-    </div>
-    </div>
+    <!-- </div> -->
     @endforeach
+    </div>
+    <div class="col-md-3">
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+        </p>      
+   
+    </div>
+    </div> 
 </div>
 @endsection
