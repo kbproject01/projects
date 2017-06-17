@@ -5,7 +5,7 @@
     <div class="container">
     <div class="col-md-6 col-md-offset-3">
     <div class="row">
-        <form method="post" action="{{route('user.post',Auth::user()->id)}}">
+        
         <div class="form-group">
             <label for="comment">Write something new</label>
             <textarea class="form-control"  rows="3" id="comment"></textarea>
