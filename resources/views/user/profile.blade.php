@@ -17,9 +17,9 @@
 	<ul>
 	
 		<li> {{ $profile->email }}</li>
-		<li> {{ $profile->UserProfile->first_name }}</li>
-		<li> {{ $profile->UserProfile->last_name }}</li>
-		<li> {{ $profile->UserProfile->last_name }}</li>	
+		<li> {{ $profile->userProfile->first_name }}</li>
+		<li> {{ $profile->userProfile->last_name }}</li>
+		<li> {{ $profile->userProfile->gender }}</li>	
 	
 	</ul>
 	</div>
