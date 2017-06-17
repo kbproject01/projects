@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Auth;
-use app\User;
+use App\User;
 class UserController extends Controller
 {
     /**
@@ -25,6 +25,7 @@ class UserController extends Controller
 
     public function profile(){
         $id= Auth::user()->id;
+        // dd($id);
         $profile=User::with('userProfile')->findOrFail($id);
         return view('user.profile',compact('profile'));
     }
