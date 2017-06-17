@@ -5,7 +5,8 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-
+use Auth;
+use app\User;
 class UserController extends Controller
 {
     /**
@@ -22,6 +23,11 @@ class UserController extends Controller
         return view('user.home',compact('posts'));
     }
 
+    public function profile(){
+        $id= Auth::user()->id;
+        $profile=User::with('userProfile')->findOrFail($id);
+        return view('user.profile',compact('profile'));
+    }
 
     /**
      * Show the form for creating a new resource.

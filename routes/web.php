@@ -23,5 +23,9 @@ Route::get('/home',[
 	// 'uses' =>  'User\HomeController@index',
 	'uses' =>  'User\UserController@index',
 	]);
+Route::get('/user/profile',[
+	'as' => 'user.profile',
+	'uses' => 'User\UserController@profile',
+	]);
 Route::resource('user','User\UserController',['as'=>'user']);
 
