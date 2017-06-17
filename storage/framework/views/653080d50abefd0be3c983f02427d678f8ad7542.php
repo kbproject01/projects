@@ -65,6 +65,8 @@
 
                                         </form>
                                     </li>
+                                    <li>
+                                        <a href="<?php echo e(route('user.profile')); ?>">Profile</a>
                                 </ul>
                             </li>
                         <?php endif; ?>
